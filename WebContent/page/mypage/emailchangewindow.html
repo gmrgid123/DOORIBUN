@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이메일 변경</title>
+<style type="text/css">
+	#wrapper {
+		width: 500px;
+		height: 200px;
+	}
+	#container {
+		display: grid;
+		margin: 30px;
+		grid-template-columns: 1fr 1fr 100px;
+		grid-template-rows: 50px;
+	}
+	#submitbtn {
+		position: relative;
+		width: 50px;
+		height: 25px;
+	}
+</style>
+<script type="text/javascript">
+	function submitClick(){
+		var email = document.getElementById("email").value;
+		if(email.length > 5 && email.indexOf("@") != -1 && email.indexOf(".") != -1) {
+			opener.document.getElementById("email").innerText = email;
+			this.close();
+		} else {
+			window.alert("올바른 이메일을 입력해주세요.");
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="container">
+			<div class="textcontainer">
+				<div class="text">변경할 이메일 입력</div>
+			</div>
+			<div class="textcontainer">
+				<div class="text">
+					<input type="email" id="email">
+				</div>
+			</div>
+			<div id="submit">
+				<input type="button" value="확인" id="submitbtn" onclick="submitClick();">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

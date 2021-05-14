@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>전화번호 변경</title>
+<style type="text/css">
+	#wrapper {
+		width: 500px;
+		height: 200px;
+	}
+	#container {
+		display: grid;
+		margin: 30px;
+		grid-template-columns: 1fr 1fr 100px;
+		grid-template-rows: 50px;
+	}
+	#submitbtn {
+		position: relative;
+		width: 50px;
+		height: 25px;
+	}
+</style>
+<script type="text/javascript">
+	function submitClick(){
+		var phone = document.getElementById("phone").value;
+		if(phone.length >= 8 && phone.length < 14) {
+			opener.document.getElementById("phone").innerText = phone;
+			this.close();
+		} else {
+			window.alert("올바른 전화번호를 입력해주세요.");
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="container">
+			<div class="textcontainer">
+				<div class="text">변경할 전화번호 입력</div>
+			</div>
+			<div class="textcontainer">
+				<div class="text">
+					<input type="text" id="phone">
+				</div>
+			</div>
+			<div id="submit">
+				<input type="button" value="확인" id="submitbtn" onclick="submitClick();">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

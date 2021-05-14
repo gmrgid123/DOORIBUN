@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비밀번호 변경</title>
+<style type="text/css">
+	#wrapper {
+		width: 500px;
+		height: 200px;
+	}
+	#container {
+		display: grid;
+		margin: 30px;
+		grid-template-columns: 1fr 1fr 100px;
+		grid-template-rows: 50px;
+	}
+	#submitbtn {
+		position: relative;
+		width: 50px;
+		height: 50px;
+	}
+</style>
+<script type="text/javascript">
+	function submitClick(){
+		var pw1 = document.getElementById("pw1").value;
+		var pw2 = document.getElementById("pw2").value;
+		if(pw1 === pw2 && pw1.length > 0) {
+			opener.document.getElementById("password").value = pw1;
+			this.close();
+		} else if(pw1 !== pw2){
+			window.alert("입력한 비밀번호가 동일하지 않습니다. 다시 입력해 주세요.");
+		} else {
+			window.alert("비밀번호를 입력해주세요.");
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="container">
+			<div class="textcontainer">
+				<div class="text">변경할 비밀번호</div>
+				<div class="text">변경할 비밀번호 확인</div>
+			</div>
+			<div class="textcontainer">
+				<div class="text">
+					<input type="password" id="pw1">
+				</div>
+				<div class="text">
+					<input type="password" id="pw2">
+				</div>
+			</div>
+			<div id="submit">
+				<input type="button" value="확인" id="submitbtn" onclick="submitClick();">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
