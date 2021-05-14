@@ -5,9 +5,13 @@ KH SEMI PROJECT
 
 ------------- 개발환경 ----------------------------
 운영체제 - Window 10
+
 개발도구 - Eclipse
+
 DBMS - Oracle 11 – sqldeveloper
+
 Server - Apache Tomcat 8.5.60
+
 Language - Java, HTML, CSS, JS, JQuery, Servlet
 -------------------------------------------------
 
